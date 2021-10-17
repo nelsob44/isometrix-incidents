@@ -1,5 +1,5 @@
 <template>
-  <nav class="px-4 flex justify-between bg-isoblue h-16 w-full">
+  <nav class="px-4 flex justify-between bg-blue-500 h-16 w-full">
     <!-- top bar left -->
     <ul class="flex items-center">
       <!-- add HOME button -->

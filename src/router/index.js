@@ -39,6 +39,7 @@ const routes = [
 
 let router = new Router({
   base: "/",
+  mode: "history",
   routes,
 });
 

@@ -1,14 +1,20 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import vuetify from './plugins/vuetify'
-import { loadFonts } from './plugins/webfontloader'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import Vuex from "vuex";
+import { store } from "./store";
 
-loadFonts()
+import "@/assets/css/tailwind.css";
+import vuetify from "./plugins/vuetify";
 
-createApp(App)
-  .use(router)
-  .use(store)
-  .use(vuetify)
-  .mount('#app')
+Vue.use(Vuex);
+Vue.use(router);
+
+Vue.config.productionTip = false;
+
+new Vue({
+  render: (h) => h(App),
+  store,
+  vuetify,
+  router,
+}).$mount("#app");

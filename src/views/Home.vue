@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-yellow-300 h-full flex flex-col pb-5">
+  <div class="bg-yellow-300 h-full mx-10 my-4 flex flex-col">
     <!-- <h1 class="w-full text-center">Welcome!</h1> -->
 
-    <Card class="ml-10p w-80p mt-10 bg-blue-100">
-      <template #title> Hello 👋🏼 </template>
-      <template #content>
+    <v-card class="ml-10p w-80p bg-blue-100">
+      <v-card-text class="text-2xl font-semibold">Hello 👋🏼</v-card-text>
+      <v-card-text class="font-medium">
         <p>
           Welcome to the IsoMetrix front end assessment. To complete this
           assessment you will need to complete the user stories listed below
@@ -12,25 +12,35 @@
           documentation. To help you to get you started here are the links to
           the two pages you will need to access to:
         </p>
-      </template>
-      <template #footer>
-        <Button class="m-1" @click="goToIncidentManagement()"
-          >Incident Management</Button
+      </v-card-text>
+      <p>
+        <v-btn
+          class="primary-class mx-2 mb-2"
+          @click="goToIncidentManagement()"
+          style="background-color: rgba(37, 99, 235, 0.7); color: #fff;"
+          >Incident Management</v-btn
         >
-        <Button class="m-1" @click="goToAddIncident()">Add Incident</Button>
-      </template>
-    </Card>
+        <v-btn
+          class="mx-2 mb-2 primary-class"
+          @click="goToAddIncident()"
+          style="background-color: rgba(37, 99, 235, 0.7); color: #fff;"
+          >Add Incident</v-btn
+        >
+      </p>
+    </v-card>
 
-    <Card
+    <v-card
       v-for="story in userStories"
       :key="story.id"
       class="ml-10p w-80p mt-5 bg-blue-100"
     >
-      <template #title> {{ story.title }}</template>
-      <template #content>
+      <v-card-text class="text-2xl font-semibold">
+        {{ story.title }}</v-card-text
+      >
+      <v-card-text class="font-medium">
         <p>{{ story.description }}</p>
-      </template>
-    </Card>
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
